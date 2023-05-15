@@ -1,10 +1,7 @@
 var isPalindrome = function (int) {
   // int must be converted to string to be able to chekc indices.
   let number = int.toString();
-  // unnecessary because it would reach false anyways by not meeting conditionals below
-  /* if (number.length === 0) {
-    return false;
-  } */
+
   if (number.length === 1) {
     return true;
   }
@@ -17,7 +14,7 @@ var isPalindrome = function (int) {
   if (number[0] === number.slice(-1)) {
     return isPalindrome(number.slice(1, -1));
   }
-  // if length is zero, it will return false as well
+  // if length is zero when starting, it will return false as well
   return false;
 };
 
