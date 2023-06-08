@@ -1,6 +1,4 @@
-/* Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
-
- 
+/* Given an integer array nums, return true if ANY value appears at least twice in the array, and return false if every element is distinct.
 
 Example 1:
 
@@ -20,3 +18,21 @@ Constraints:
 
 1 <= nums.length <= 105
 -109 <= nums[i] <= 109 */
+
+/*
+    approach: going to just write a for loop and add each number into the object with the frequency it is in there.
+
+*/
+
+function containsDuplicate(nums) {
+  const numsObj = {};
+  for (let i = 0; i < nums.length; i++) {
+    let num = nums[i];
+    if (numsObj[num]) {
+      return true;
+    } else {
+      numsObj[num] = 1;
+    }
+  }
+  return false;
+}
