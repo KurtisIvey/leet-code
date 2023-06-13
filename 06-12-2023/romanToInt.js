@@ -81,10 +81,14 @@ function romanToInt(s) {
   let output = 0;
 
   for (let i = 0; i < s.length; i++) {
+    // keep track of symbol vars during for loop to match with numerals
     const currentSymbol = s[i];
     const nextSymbol = s[i + 1];
+    // keep track of combined because we want to check first
     const combinedSymbol = currentSymbol + nextSymbol;
 
+    // some method to find the numeral within the array of objects.
+    // check combined first
     if (numerals.some((numeral) => numeral.symbol === combinedSymbol)) {
       const matchingNumeral = numerals.find(
         (numeral) => numeral.symbol === combinedSymbol
@@ -95,6 +99,7 @@ function romanToInt(s) {
       const matchingNumeral = numerals.find(
         (numeral) => numeral.symbol === currentSymbol
       );
+      // add to output
       output += matchingNumeral.value;
     }
   }
