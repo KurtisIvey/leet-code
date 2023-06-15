@@ -16,12 +16,7 @@ In the context of the code, the equation (x - x1) * yDif !== (y - y1) * xDif is 
 If the slopes are not equal, it means that the points are not collinear and do not lie on the same line segment. Therefore, the function returns false, indicating that the points do not form a straight line.
 
 
-pseudocode:
-    given an array of a length at least > 2 else return false
-    determine the slope via comparing first two arrs
-        x2-x1, y2-y1  , we'll create a var for each that it must apply to while iterating through main array
 
-    if slope doesn't comply, we'll return false immediately,if it does throughout return true
 */
 
 function checkStraightLine(coordinates) {
@@ -59,3 +54,30 @@ console.log(
     [2, 0],
   ])
 );
+
+/*
+
+using y=mx+b
+
+best solution
+
+function checkStraightLine(coordinates: number[][], deltaY = null, deltaX = null, a = null, b = null): boolean {
+  deltaY = coordinates[1][1] - coordinates[0][1]
+  deltaX = coordinates[1][0] - coordinates[0][0]
+  a = deltaY/deltaX
+  b = coordinates[0][1] - a * coordinates[0][0]
+  for ( let i = 1; i < coordinates.length; i++ ) {
+    if ( deltaX === 0 ) {
+      if ( coordinates[i][0] !== coordinates[i - 1][0]) return false
+    }
+    else if ( deltaY === 0 ) {
+      if ( coordinates[i][1] !== coordinates[i - 1][1]) return false
+    }
+    else {
+      if ( coordinates[i][1] !== a*coordinates[i][0] + b ) return false
+    }
+  } 
+  return true
+};
+
+*/
