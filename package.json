@@ -1,6 +1,6 @@
 {"scripts": {
   "test": "echo \"Error: no test specified\" && exit 1",
-  "dev": "nodemon ./06-08-2023/topKFrequent.js"
+  "dev": "nodemon ./06-15-2023/checkStraightLine.js"
 },
   "dependencies": {
     "nodemon": "^2.0.22"
