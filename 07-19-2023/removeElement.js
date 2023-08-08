@@ -24,5 +24,8 @@ var removeElement = function (nums, val) {
     }
   }
   nums.length = currentIndex;
+  // returns length of curr index amount 
+  // when one found, it increments
+  // tracking down via curr index
   return nums.length;
 };
